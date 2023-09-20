@@ -1,0 +1,21 @@
+---
+import styles from './style.module.scss'
+---
+
+<header class={styles.header}>
+  <a href="/">
+    <h1 class={styles.logo}>
+      <img src="/images/logo.png" alt="この世の終わりゲーミング" width={70} height={70} />
+    </h1>
+  </a>
+  <nav>
+    <ul class={styles.menuPc}>
+      <li class={styles.menuItem}><a href="/about">ABOUT</a></li>
+      <li class={styles.menuItem}><a href="/news">NEWS</a></li>
+      <li class={styles.menuItem}><a href="/members">MEMBERS</a></li>
+      <li class={styles.menuItem}><a href="/sponsors">SPONSORS</a></li>
+      <li class={styles.menuItem}><a href="/contact">CONTACT</a></li>
+    </ul>
+  </nav>
+  <img src="/images/svgs/menu.svg" alt="menu" width={40} height={40} class={styles.menuSp} />
+</header>

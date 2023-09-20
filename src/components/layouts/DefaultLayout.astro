@@ -1,0 +1,39 @@
+---
+import Head from "@components/Head.astro";
+import Background from "@components/layouts/Background.astro";
+import BottomFooter from '@components/navigations/BottomFooter/index.astro';
+import FixedHeader from '@components/navigations/FixedHeader/index.astro';
+---
+
+<!DOCTYPE html>
+<html lang="jp">
+  <Head />
+  <Background />
+  <div class='wrapper'>
+    <FixedHeader />
+    <main class='container'>
+      <slot />
+    </main>
+    <BottomFooter />
+  </div>
+</html>
+
+<style>
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  color: var(--color-white);
+}
+.container {
+  margin: 0 0 160px;
+  padding: 40px 0;
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  max-width: 1000px;
+}
+</style>
