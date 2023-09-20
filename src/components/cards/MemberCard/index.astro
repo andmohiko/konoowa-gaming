@@ -1,0 +1,45 @@
+---
+import styles from './style.module.scss';
+
+export interface Member {
+  name: string;
+  profileImageUrl: string;
+  twitter: string;
+  games: string[];
+  bio: string;
+}
+
+interface Props {
+  member: Member;
+}
+
+const { member } = Astro.props;
+---
+
+<div class={styles.memberCard}>
+  <img
+    src={member.profileImageUrl}
+    width="200"
+    height="200"
+    alt={member.name}
+    class={styles.profileImage}
+  />
+  <div class={styles.texts}>
+    <p class={styles.name}>{member.name}</p>
+    <a
+      href={`https://twitter.com/${member.twitter}`}
+      target="_blank"
+      class={styles.twitter}
+      rel="noreferrer"
+    >
+      <img
+        src="/images/x-logo.webp"
+        width="24"
+        height="24"
+        alt="twitter"
+      />
+      <p class={styles.twitterId}>{member.twitter}</p>
+    </a>
+    <p class={styles.bio}>{member.bio}</p>
+  </div>
+</div>
