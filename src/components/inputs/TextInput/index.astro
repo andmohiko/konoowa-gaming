@@ -1,0 +1,16 @@
+---
+import styles from './style.module.scss'
+
+interface Props {
+  label: string
+  error?: string
+}
+
+const { label, error } = Astro.props as Props
+---
+
+<div class={styles.textInput}>
+  <label class={styles.label}>{label}</label>
+  <input class={styles.input} type="text" />
+  <p class={styles.error}>{error ?? ' '}</p>
+</div>

@@ -1,0 +1,16 @@
+---
+import styles from './style.module.scss'
+import BasicButton from '~/components/buttons/BasicButton/index.astro'
+import TextInput from '~/components/inputs/TextInput/index.astro'
+import TextArea from '~/components/inputs/TextArea/index.astro'
+---
+
+<form class={styles.contactForm}>
+  <div class={styles.inputs}>
+    <TextInput label="お名前" value="" onChange={() => {}} />
+    <TextInput label="会社名(任意)" value="" onChange={() => {}} />
+    <TextInput label="メールアドレス" value="" onChange={() => {}} />
+    <TextArea label="お問い合わせ内容" value="" onChange={() => {}} />
+  </div>
+  <BasicButton type="submit">送信</BasicButton>
+</form>
