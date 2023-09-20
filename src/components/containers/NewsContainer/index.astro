@@ -1,0 +1,21 @@
+---
+import styles from './style.module.scss';
+import ArticleCard from '~/components/cards/ArticleCard/index.astro';
+import TitleText from '~/components/typographys/TitleText.astro';
+import type { Article } from '~/types/article.ts'
+
+interface Props {
+  articles: Article[];
+}
+
+const { articles } = Astro.props as Props;
+---
+
+<div class={styles.newsContainer}>
+  <TitleText>News</TitleText>
+  <div class={styles.newsList}>
+    {articles.map(article => (
+      <ArticleCard article={article} />
+    ))}
+  </div>
+</div>

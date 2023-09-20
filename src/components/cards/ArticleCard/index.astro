@@ -1,0 +1,29 @@
+---
+import dayjs from 'dayjs'
+
+import styles from './style.module.scss'
+
+import type { Article } from '~/types/article'
+
+interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+---
+
+<a href={`/news/${article.id}`}>
+  <article class={styles.articleCard}>
+    <img
+      src={article.headerImage.url}
+      alt={article.title}
+      class={styles.headerImage}
+    />
+    <div class={styles.texts}>
+      <p class={styles.publishedAt}>
+        {dayjs(article.publishedAt).format('YYYY.MM.DD')}
+      </p>
+      <p class={styles.title}>{article.title}</p>
+    </div>
+  </article>
+</a>

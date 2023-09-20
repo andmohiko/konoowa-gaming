@@ -1,0 +1,19 @@
+.newsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 16px;
+  padding-top: 70px;
+
+  gap: 40px;
+
+  .newsList {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 48px;
+  }
+}
