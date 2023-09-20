@@ -1,0 +1,78 @@
+---
+import styles from './style.module.scss';
+import ArticleCard from '~/components/cards/ArticleCard/index.astro';
+import TitleText from '~/components/typographys/TitleText.astro';
+import MoreButton from '~/components/buttons/MoreButton/index.astro';
+import type { Article } from '~/types/article.ts'
+
+interface Props {
+  articles: Article[];
+}
+
+const { articles } = Astro.props as Props;
+---
+
+<div class={styles.topContainer}>
+  <section class={styles.hero}>
+    <img
+      src="/images/logo.png"
+      width={593}
+      height={594}
+      alt="この世の終わりゲーミング"
+      class={styles.heroImage}
+    />
+    <p class={styles.catchcopy}>
+      このジャングルのようなオンライン戦場で、
+      <br />
+      この世の終わりのようなプレイングをしてくるやつらを正す存在。
+    </p>
+    <div class={styles.more}>
+      <MoreButton href="/about" />
+    </div>
+  </section>
+
+  <section class={styles.section}>
+    <TitleText level="h2">News</TitleText>
+    <div class={styles.newsList}>
+      {articles.map((article) => (
+        <ArticleCard article={article} />
+      ))}
+    </div>
+    <div class={styles.more}>
+      <MoreButton href="/news" />
+    </div>
+  </section>
+
+  <section class={styles.section}>
+    <TitleText level="h2">SPONSORS</TitleText>
+    <div class={styles.sponsersList}>
+      <img
+        src="/images/kawaiigia.png"
+        width={200}
+        height={200}
+        alt="sponsors"
+      />
+      <img
+        src="/images/ouchidaisuki.png"
+        width={200}
+        height={200}
+        alt="sponsors"
+      />
+      <img
+        src="/images/sokushikon.png"
+        width={200}
+        height={200}
+        alt="sponsors"
+      />
+      <img
+        src="/images/tsuyoso.png"
+        width={200}
+        height={200}
+        alt="sponsors"
+      />
+    </div>
+    <div class={styles.more}>
+      <MoreButton href="/sponsors" />
+    </div>
+  </section>
+</div>
