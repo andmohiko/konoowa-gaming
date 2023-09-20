@@ -17,5 +17,61 @@ import styles from './style.module.scss'
       <li class={styles.menuItem}><a href="/contact">CONTACT</a></li>
     </ul>
   </nav>
-  <img src="/images/svgs/menu.svg" alt="menu" width={40} height={40} class={styles.menuSp} />
+  <button id="hamburgerButton" class={styles.hamburgerMenuButton}>
+    <img src="/images/svgs/menu.svg" alt="menu" width={40} height={40} class={styles.menuSp} />
+  </button>
+
+  <nav id="spMenu" class={`${styles.hamburgerMenu} hidden`}>
+    <div class="nonScroll"></div>
+    <ul class={styles.menuList}>
+      <li class={styles.menuItem}>
+        <a href="/">TOP</a>
+      </li>
+      <li class={styles.menuItem}>
+        <a href="/about">ABOUT</a>
+      </li>
+      <li class={styles.menuItem}>
+        <a href="/news">NEWS</a>
+      </li>
+      <li class={styles.menuItem}>
+        <a href="/members">MEMBERS</a>
+      </li>
+      <li class={styles.menuItem}>
+        <a href="/sponsors">SPONSORS</a>
+      </li>
+      <li class={styles.menuItem}>
+        <a href="/contact">CONTACT</a>
+      </li>
+    </ul>
+    <button id="close" class={styles.close}>
+      <img
+        src="/images/svgs/close.svg"
+        alt="close"
+        width={40}
+        height={40}
+      />
+    </button>
+  </nav>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerButton = document.getElementById('hamburgerButton');
+  const closeButton = document.getElementById('close');
+  const menu = document.getElementById('spMenu');
+  if (hamburgerButton && closeButton && menu) {
+    hamburgerButton.addEventListener('click', function() {
+      menu.classList.remove('hidden');
+    });
+    closeButton.addEventListener('click', function() {
+      menu.classList.add('hidden');
+    });
+  }
+});
+</script>
+
+<style>
+.hidden {
+  display: none;
+}
+</style>
