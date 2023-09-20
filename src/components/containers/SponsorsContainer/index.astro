@@ -1,0 +1,23 @@
+---
+import styles from './style.module.scss';
+import BaseText from '@components/typographys/BaseText.astro';
+import TitleText from '@components/typographys/TitleText.astro';
+---
+
+<div class={styles.sponsorsContainer}>
+  <TitleText>Sponsors</TitleText>
+  <div class={styles.contents}>
+    <BaseText>
+      この世の終わりゲーミングは以下の企業様よりスポンサーいただいています。
+    </BaseText>
+    <div class={styles.sponsorsList}>
+      <img src="/images/iikanji.png" width="200" height="200" alt="sponsors" />
+      <img src="/images/kawaiigia.png" width="200" height="200" alt="sponsors" />
+      <img src="/images/ouchidaisuki.png" width="200" height="200" alt="sponsors" />
+      <img src="/images/sokushikon.png" width="200" height="200" alt="sponsors" />
+      <img src="/images/soreppoi.png" width="200" height="200" alt="sponsors" />
+      <img src="/images/tsuyoso.png" width="200" height="200" alt="sponsors" />
+      <img src="/images/sponsors/sankaku.png" width="200" height="200" alt="sponsors" />
+    </div>
+  </div>
+</div>
