@@ -1,0 +1,29 @@
+---
+import dayjs from 'dayjs'
+
+import styles from './style.module.scss'
+
+import TitleText from '~/components/typographys/TitleText.astro';
+import type { Article } from '~/types/article'
+
+interface Props {
+  article: Article
+}
+
+const { article } = Astro.props;
+---
+
+<div class={styles.articleContainer}>
+  <img
+    src={article.headerImage.url}
+    alt={article.title}
+    class={styles.headerImage}
+  />
+  <div class={styles.texts}>
+    <TitleText level="h2">{article.title}</TitleText>
+    <p class={styles.publishedAt}>
+      {dayjs(article.publishedAt).format('YYYY.MM.DD')}
+    </p>
+    <div set:html={article.body}></div>
+  </div>
+</div>
